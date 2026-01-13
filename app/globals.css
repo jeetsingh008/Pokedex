@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@layer base {
+}
+
+@theme {
+  --font-sans: var(--font-roboto);
+
+  --text-heading-l: 48px;
+  --text-heading-m: 28px;
+  --text-heading-s: 18px;
+
+  --text-body-1: 20px;
+  --text-body-2: 16px;
+  --text-subtext-1: 16px;
+  --text-subtext-2: 14px;
+  --text-button: 16px;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+}
+
+@layer base {
+  html,
+  body {
+    @apply font-sans, bg-white/80, antialiased;
+  }
+
+  h1 {
+    @apply text-heading-l, font-bold, tracking-tight;
+  }
+  h2 {
+    @apply text-heading-m, font-bold;
+  }
+  h3 {
+    @apply text-heading-s, font-bold;
+  }
+}
