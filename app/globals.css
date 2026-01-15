@@ -1,24 +1,23 @@
 @import "tailwindcss";
 
 @theme {
-  /* Typography */
-  --font-sans: var(--font-roboto);
+  /* Typography Scale */
+  --text-heading-l: clamp(32px, 5vw, 48px);
+  --text-heading-m: clamp(24px, 1.5rem + 1vw, 28px);
+  --text-heading-s: clamp(16px, 1rem + 0.5vw, 18px);
+  --text-body-1: clamp(16px, 1rem + 0.25vw, 20px);
+  --text-body-2: clamp(14px, 0.875rem + 0.15vw, 16px);
+  --text-subtext-1: clamp(14px, 0.875rem + 0.1vw, 16px);
+  --text-subtext-2: clamp(12px, 0.75rem + 0.1vw, 14px);
+  --text-button: clamp(14px, 0.875rem + 0.2vw, 16px);
 
-  --text-heading-l: 48px;
-  --text-heading-m: 28px;
-  --text-heading-s: 18px;
-
-  --text-body-1: 20px;
-  --text-body-2: 16px;
-  --text-subtext-1: 16px;
-  --text-subtext-2: 14px;
-  --text-button: 16px;
-
+  /* Font Settings */
+  --font-sans: "Roboto", ui-sans-serif, system-ui;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
 
-  /* Base Colors */
+  /* Brand Colors */
   --color-white: #ffffff;
   --color-light-gray: #f5f7fb;
   --color-dark-gray: #212121;
@@ -26,27 +25,32 @@
   --color-dark-blue: #416edf;
   --color-yellow: #ffce31;
 
-  /* Tag Colors */
-  --color-tag-fire: #FF6464;
-  --color-tag-bug: #C9FF84;
-  --color-tag-water: #9FF3FF;
-  --color-tag-grass: #80E177;
-  /* ... rest of your tags ... */
+  /* Tag & Pokemon Type Colors */
+  --color-fire: #FF6464;
+  --color-bug: #C9FF84;
+  --color-water: #9FF3FF;
+  --color-poison: #D89CFD;
+  --color-normal: #CBCBCB;
+  --color-rock: #CFC06F;
+  --color-ground: #FFBF72;
+  --color-fighting: #FF699F;
+  --color-ghost: #B592FF;
+  --color-psychic: #FF5E60;
+  --color-ice: #AEFFF4;
+  --color-dragon: #87C5FF;
+  --color-dark: #8F8F8F;
+  --color-fairy: #FFA2E3;
+  --color-electric: #FFFA86;
+  --color-steel: #A4FFE9;
+  --color-grass: #80E177;
 
-  /* Gradients */
+  /* Background Gradients */
   --background-image-flying-gradient: linear-gradient(to bottom, #CBE9FF 0%, #2299EE 100%);
-
-  /* Background Colors */
-  --color-bg-fire: #EB6C6C;
-  --color-bg-bug: #91AC22;
-  --color-bg-water: #009ACB;
-  --color-bg-grass: #1EBA11;
-  /* ... rest of your backgrounds ... */
 }
 
 @layer base {
   html, body {
-    @apply font-sans bg-white/80 antialiased;
+    @apply font-sans bg-white/80 antialiased text-dark-gray;
   }
 
   h1 { @apply text-heading-l font-bold tracking-tight; }
@@ -54,20 +58,23 @@
   h3 { @apply text-heading-s font-bold; }
   
   button {
-    @apply cursor-pointer focus:outline-none;
+    @apply text-button font-bold cursor-pointer focus:outline-none;
   }
 }
 
 @layer components {
+  /* Primary Button - Fixed colors and syntax */
   .btn-primary {
-    @apply text-white font-bold rounded-lg bg-dark-blue shadow-md px-4 py-1 transition-transform active:scale-95;
+    @apply text-white font-bold rounded-lg bg-dark-blue shadow-md px-4 py-1 transition-colors hover:bg-dark-blue/80;
   }
 
+  /* Outline Button */
   .btn-outline {
-    @apply text-dark-blue font-bold rounded-lg bg-transparent border border-dark-blue shadow-md px-4 py-1;
+    @apply text-dark-blue font-bold rounded-lg bg-transparent border border-dark-blue shadow-md px-4 py-1 hover:bg-dark-blue/10 transition-colors;
   }
 
+  /* Search Input */
   .search-input {
-    @apply w-full rounded-lg bg-white/50 border border-blue px-4 py-2 focus:ring-2 focus:ring-dark-blue outline-none;
+    @apply rounded-lg bg-transparent border border-blue px-3 py-2 focus:ring-2 focus:ring-dark-blue outline-none;
   }
 }
