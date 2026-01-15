@@ -1,9 +1,7 @@
 @import "tailwindcss";
 
-@layer base {
-}
-
 @theme {
+  /* Typography */
   --font-sans: var(--font-roboto);
 
   --text-heading-l: 48px;
@@ -19,21 +17,57 @@
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
+
+  /* Base Colors */
+  --color-white: #ffffff;
+  --color-light-gray: #f5f7fb;
+  --color-dark-gray: #212121;
+  --color-blue: #c9d2ea;
+  --color-dark-blue: #416edf;
+  --color-yellow: #ffce31;
+
+  /* Tag Colors */
+  --color-tag-fire: #FF6464;
+  --color-tag-bug: #C9FF84;
+  --color-tag-water: #9FF3FF;
+  --color-tag-grass: #80E177;
+  /* ... rest of your tags ... */
+
+  /* Gradients */
+  --background-image-flying-gradient: linear-gradient(to bottom, #CBE9FF 0%, #2299EE 100%);
+
+  /* Background Colors */
+  --color-bg-fire: #EB6C6C;
+  --color-bg-bug: #91AC22;
+  --color-bg-water: #009ACB;
+  --color-bg-grass: #1EBA11;
+  /* ... rest of your backgrounds ... */
 }
 
 @layer base {
-  html,
-  body {
-    @apply font-sans, bg-white/80, antialiased;
+  html, body {
+    @apply font-sans bg-white/80 antialiased;
   }
 
-  h1 {
-    @apply text-heading-l, font-bold, tracking-tight;
+  h1 { @apply text-heading-l font-bold tracking-tight; }
+  h2 { @apply text-heading-m font-bold; }
+  h3 { @apply text-heading-s font-bold; }
+  
+  button {
+    @apply cursor-pointer focus:outline-none;
   }
-  h2 {
-    @apply text-heading-m, font-bold;
+}
+
+@layer components {
+  .btn-primary {
+    @apply text-white font-bold rounded-lg bg-dark-blue shadow-md px-4 py-1 transition-transform active:scale-95;
   }
-  h3 {
-    @apply text-heading-s, font-bold;
+
+  .btn-outline {
+    @apply text-dark-blue font-bold rounded-lg bg-transparent border border-dark-blue shadow-md px-4 py-1;
+  }
+
+  .search-input {
+    @apply w-full rounded-lg bg-white/50 border border-blue px-4 py-2 focus:ring-2 focus:ring-dark-blue outline-none;
   }
 }
