@@ -25,11 +25,17 @@ const Card = ({
 }) => {
   return (
     <div
-      className={`card overflow-hidden ${
-        TYPE_BG_MAP[PokemonDetails.types[0].toLowerCase()]
-      }`}
+      className={`card ${TYPE_BG_MAP[PokemonDetails.types[0].toLowerCase()]}`}
     >
-      <div className="h-full w-full flex flex-col justify-end">
+      {/* --Hardcoded for now-- */}
+      <Image
+        className="absolute z-10 top-0 right-1/2 transform -translate-y-1/2 translate-x-1/2"
+        src={"/pokemon-img.png"}
+        alt="Balbasur Sprite"
+        width={160}
+        height={160}
+      />
+      <div className="h-full w-full overflow-hidden flex flex-col justify-end">
         {/* Upper part - Sprite */}
         {/* Lower part - Details text */}
         <div className="space-y-4">

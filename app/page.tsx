@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="container mx-auto p-4 min-h-screen w-full">
-      <div className="h-full w-full grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-6">
+    <main className="container mx-auto p-4 min-h-screen w-full py-20">
+      <div className="h-full w-full grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-y-18 gap-x-6">
         <Card
           PokemonDetails={{
             name: "Bulbasaur",
