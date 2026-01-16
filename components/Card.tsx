@@ -8,7 +8,7 @@ type PokemonDetailsType = {
   id: number;
   types: string[];
   sprite: string;
-  typeIcon: string;
+  typeIcon?: string;
 };
 
 const Card = ({
