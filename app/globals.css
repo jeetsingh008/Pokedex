@@ -122,6 +122,16 @@
     @apply w-full rounded-2xl shadow-card;
   }
   .search-input {
-    @apply w-full h-full p-4 text-dark-blue rounded-2xl placeholder:text-dark-blue placeholder:text-body-2 font-medium border-0 outline-none focus:ring-1 focus:ring-dark-blue;
+    @apply w-full h-full p-4 pl-10 text-dark-blue rounded-2xl placeholder:text-dark-blue placeholder:text-body-2 font-medium border-0 outline-none focus:ring-1 focus:ring-dark-blue;
+  }
+
+  .btn-primary {
+    @apply bg-blue px-6 py-1 rounded-md text-dark-blue font-medium shadow-card hover:bg-dark-blue/80;
+  }
+  .btn-secondary {
+    @apply bg-yellow px-6 py-1 rounded-md text-dark-blue font-medium shadow-card hover:bg-yellow/80;
+  }
+  .btn-outline {
+    @apply bg-transparent border border-dark-blue px-6 py-1 rounded-md text-dark-blue font-medium shadow-card hover:bg-dark-blue/10;
   }
 }
