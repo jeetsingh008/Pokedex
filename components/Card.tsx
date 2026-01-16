@@ -60,7 +60,7 @@ const Card = ({
           alt="Pokemon Circle"
           height={200}
           width={200}
-          className="absolute transform -translate-x-1/2 translate-y-1/2 opacity-[6%] rotate-100"
+          className="absolute z-0 transform -translate-x-1/2 translate-y-1/2 opacity-[6%] rotate-100"
         />
       </div>
     </div>

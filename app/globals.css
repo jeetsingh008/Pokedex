@@ -114,6 +114,6 @@
   }
 
   .type {
-    @apply text-dark-gray px-3 py-2 rounded-full shadow-2xl text-body-2 font-regular flex items-center gap-1;
+    @apply text-dark-gray px-3 py-2 rounded-full shadow-2xl z-10 text-body-2 font-regular flex items-center gap-1;
   }
 }
