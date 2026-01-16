@@ -35,7 +35,7 @@ const Card = ({
         width={160}
         height={160}
       />
-      <div className="h-full w-full overflow-hidden flex flex-col justify-end">
+      <div className="h-full w-full p-5 overflow-hidden relative flex flex-col justify-end">
         {/* Upper part - Sprite */}
         {/* Lower part - Details text */}
         <div className="space-y-4">
