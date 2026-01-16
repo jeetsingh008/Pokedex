@@ -26,37 +26,68 @@
   --color-yellow: #ffce31;
 
   /* Tag & Pokemon Type Colors */
-  --color-fire: #FF6464;
-  --color-bug: #C9FF84;
-  --color-water: #9FF3FF;
-  --color-poison: #D89CFD;
-  --color-normal: #CBCBCB;
-  --color-rock: #CFC06F;
-  --color-ground: #FFBF72;
-  --color-fighting: #FF699F;
-  --color-ghost: #B592FF;
-  --color-psychic: #FF5E60;
-  --color-ice: #AEFFF4;
-  --color-dragon: #87C5FF;
-  --color-dark: #8F8F8F;
-  --color-fairy: #FFA2E3;
-  --color-electric: #FFFA86;
-  --color-steel: #A4FFE9;
-  --color-grass: #80E177;
+  --color-fire: #ff6464;
+  --color-bug: #c9ff84;
+  --color-water: #9ff3ff;
+  --color-poison: #d89cfd;
+  --color-normal: #cbcbcb;
+  --color-rock: #cfc06f;
+  --color-ground: #ffbf72;
+  --color-fighting: #ff699f;
+  --color-ghost: #b592ff;
+  --color-psychic: #ff5e60;
+  --color-ice: #aefff4;
+  --color-dragon: #87c5ff;
+  --color-dark: #8f8f8f;
+  --color-fairy: #ffa2e3;
+  --color-electric: #fffa86;
+  --color-steel: #a4ffe9;
+  --color-grass: #80e177;
+
+  /* Background Colors */
+  --color-bg-fire: #eb6c6c;
+  --color-bg-bug: #91ac22;
+  --color-bg-water: #009acb;
+  --color-bg-flying: #2299ee;
+  --color-bg-poison: #7e00cb;
+  --color-bg-normal: #b6b6b6;
+  --color-bg-rock: #857d57;
+  --color-bg-ground: #a77437;
+  --color-bg-fighting: #ba114e;
+  --color-bg-ghost: #6b2bf1;
+  --color-bg-psychic: #c4484a;
+  --color-bg-ice: #3a9d90;
+  --color-bg-dragon: #126888;
+  --color-bg-dark: #373737;
+  --color-bg-fairy: #c01a8d;
+  --color-bg-electric: #b7b117;
+  --color-bg-steel: #448f85;
+  --color-bg-grass: #1eba11;
 
   /* Background Gradients */
-  --background-image-flying-gradient: linear-gradient(to bottom, #CBE9FF 0%, #2299EE 100%);
+  --background-image-flying-gradient: linear-gradient(
+    to bottom,
+    #cbe9ff 0%,
+    #2299ee 100%
+  );
 }
 
 @layer base {
-  html, body {
+  html,
+  body {
     @apply font-sans bg-white/80 antialiased text-dark-gray;
   }
 
-  h1 { @apply text-heading-l font-bold tracking-tight; }
-  h2 { @apply text-heading-m font-bold; }
-  h3 { @apply text-heading-s font-bold; }
-  
+  h1 {
+    @apply text-heading-l font-bold tracking-tight;
+  }
+  h2 {
+    @apply text-heading-m font-bold;
+  }
+  h3 {
+    @apply text-heading-s font-bold;
+  }
+
   button {
     @apply text-button font-bold cursor-pointer focus:outline-none;
   }
@@ -65,16 +96,24 @@
 @layer components {
   /* Primary Button - Fixed colors and syntax */
   .btn-primary {
-    @apply text-white font-bold rounded-lg bg-dark-blue shadow-md px-4 py-1 transition-colors hover:bg-dark-blue/80;
+    @apply text-white font-bold rounded-2xl bg-dark-blue shadow-md px-4 py-1 transition-colors hover:bg-dark-blue/80;
   }
 
   /* Outline Button */
   .btn-outline {
-    @apply text-dark-blue font-bold rounded-lg bg-transparent border border-dark-blue shadow-md px-4 py-1 hover:bg-dark-blue/10 transition-colors;
+    @apply text-dark-blue font-bold rounded-2xl bg-transparent border border-dark-blue shadow-md px-4 py-1 hover:bg-dark-blue/10 transition-colors;
   }
 
   /* Search Input */
   .search-input {
-    @apply rounded-lg bg-transparent border border-blue px-3 py-2 focus:ring-2 focus:ring-dark-blue outline-none;
+    @apply rounded-2xl bg-transparent border border-blue px-3 py-2 focus:ring-2 focus:ring-dark-blue outline-none;
+  }
+
+  .card {
+    @apply rounded-2xl shadow-lg p-5 h-64 relative;
+  }
+
+  .type {
+    @apply text-dark-gray px-3 py-2 rounded-full shadow-2xl text-body-2 font-regular flex items-center gap-1;
   }
 }
