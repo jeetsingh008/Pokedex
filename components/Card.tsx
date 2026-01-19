@@ -1,6 +1,5 @@
 import { TYPE_BG_MAP, TYPE_COLOR_MAP } from "@/utils/pokemon-helper";
 import { Icons } from "@/constants/illustrations";
-import { IconType } from "react-icons/lib";
 import Image from "next/image";
 
 type PokemonDetailsType = {
