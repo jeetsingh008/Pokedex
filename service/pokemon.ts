@@ -1,6 +1,6 @@
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
-export const getNameUrls = async () => {
+export const getNameAndUrl = async () => {
   try {
     const response = await fetch(`${BASE_URL}/pokemon?limit=100&offset=0`);
     if (!response.ok) {
