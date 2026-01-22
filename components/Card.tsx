@@ -24,17 +24,17 @@ const Card = ({
 }) => {
   return (
     <div
-      className={`card ${TYPE_BG_MAP[PokemonDetails.types[0].toLowerCase()]}`}
+      className={`card group ${TYPE_BG_MAP[PokemonDetails.types[0].toLowerCase()]}`}
     >
       {/* --Hardcoded for now-- */}
       <Image
-        className="absolute z-10 top-0 right-1/2 transform -translate-y-1/2 translate-x-1/2"
+        className="absolute z-10 group-hover:scale-110 group-hover:contrast-125 duration-150 ease-in-out top-0 right-1/2 transform -translate-y-1/2 translate-x-1/2"
         src={PokemonDetails.sprite}
-        alt="Balbasur Sprite"
+        alt={PokemonDetails.name}
         width={160}
         height={160}
       />
-      <div className="h-full w-full p-5 overflow-hidden relative flex flex-col justify-end">
+      <div className="h-full w-full group p-5 overflow-hidden relative flex flex-col justify-end">
         {/* Upper part - Sprite */}
         {/* Lower part - Details text */}
         <div className="space-y-4">
@@ -65,7 +65,7 @@ const Card = ({
           alt="Pokemon Circle"
           height={200}
           width={200}
-          className="absolute z-0 transform -translate-x-1/2 translate-y-1/2 opacity-[6%] rotate-100"
+          className="absolute z-0 group-hover:rotate-90 group-hover:scale-110 group-hover:opacity-10 transform duration-200 ease-in-out -translate-x-1/2 translate-y-1/2 opacity-6 rotate-100"
         />
       </div>
     </div>
