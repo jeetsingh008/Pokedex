@@ -2,6 +2,7 @@ export const TYPE_COLOR_MAP: Record<string, string> = {
   fire: "bg-fire",
   bug: "bg-bug",
   water: "bg-water",
+  flying: "bg-flying",
   poison: "bg-poison",
   normal: "bg-normal",
   rock: "bg-rock",

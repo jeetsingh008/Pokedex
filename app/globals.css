@@ -29,6 +29,7 @@
   --color-fire: #ff6464;
   --color-bug: #c9ff84;
   --color-water: #9ff3ff;
+  --color-flying: #AFDBF5;
   --color-poison: #d89cfd;
   --color-normal: #cbcbcb;
   --color-rock: #cfc06f;
@@ -48,7 +49,7 @@
   --color-bg-fire: #eb6c6c;
   --color-bg-bug: #91ac22;
   --color-bg-water: #009acb;
-  --color-bg-flying: #2299ee;
+  --color-bg-flying: #6CB4EE;
   --color-bg-poison: #7e00cb;
   --color-bg-normal: #b6b6b6;
   --color-bg-rock: #857d57;
