@@ -29,7 +29,7 @@ const Card = ({
       {/* --Hardcoded for now-- */}
       <Image
         className="absolute z-10 top-0 right-1/2 transform -translate-y-1/2 translate-x-1/2"
-        src={"/pokemon-img.png"}
+        src={PokemonDetails.sprite}
         alt="Balbasur Sprite"
         width={160}
         height={160}
