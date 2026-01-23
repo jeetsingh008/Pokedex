@@ -4,9 +4,12 @@ interface PokemonBrief {
   url: string;
 }
 
-export const getNameAndUrl = async () => {
+export const getNameAndUrl = async (page: number = 1, limit: number = 20) => {
+  const offset = (page - 1) * limit;
   try {
-    const response = await fetch(`${BASE_URL}/pokemon?limit=100&offset=0`);
+    const response = await fetch(
+      `${BASE_URL}/pokemon?limit=${limit}&offset=${offset}`,
+    );
     if (!response.ok) {
       throw new Error("HTTP error! status: ", { cause: response.status });
     }
@@ -18,9 +21,9 @@ export const getNameAndUrl = async () => {
   }
 };
 
-export const getPokemonData = async () => {
+export const getPokemonData = async (page: number = 1, limit: number = 20) => {
   try {
-    const pokemonUrlAndNames = await getNameAndUrl();
+    const pokemonUrlAndNames = await getNameAndUrl(page, limit);
     const urls: string[] = pokemonUrlAndNames.results.map(
       (result: PokemonBrief) => {
         const url = result.url;

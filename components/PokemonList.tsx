@@ -1,8 +1,8 @@
 import { getPokemonData } from "@/service/pokemon";
 import Card from "./Card";
 
-const PokemonList = async () => {
-  const pokemonData = await getPokemonData();
+const PokemonList = async ({ page }: { page: number }) => {
+  const pokemonData = await getPokemonData(page);
   return (
     <div>
       <div className="h-full w-full grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-y-18 gap-x-6">
