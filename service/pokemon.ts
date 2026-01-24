@@ -1,3 +1,4 @@
+import { redis } from "@/lib/redis";
 const BASE_URL = process.env.BASE_URL;
 interface PokemonBrief {
   name: string;
@@ -22,7 +23,17 @@ export const getNameAndUrl = async (page: number = 1, limit: number = 20) => {
 };
 
 export const getPokemonData = async (page: number = 1, limit: number = 20) => {
+  const CACHE_KEY = `pokemon:page:${page}:limit:${limit}`;
+
   try {
+    const cachedData = await redis.get(CACHE_KEY);
+
+    if (cachedData) {
+      console.log("CACHE HIT: Fetching data from redis...");
+      return cachedData;
+    }
+    console.log("CACHE MISS: Fetching from PokeAPI...");
+
     const pokemonUrlAndNames = await getNameAndUrl(page, limit);
     const urls: string[] = pokemonUrlAndNames.results.map(
       (result: PokemonBrief) => {
@@ -48,6 +59,8 @@ export const getPokemonData = async (page: number = 1, limit: number = 20) => {
       };
     });
     const allPokemonData = await Promise.all(dataPromises);
+
+    await redis.set(CACHE_KEY, JSON.stringify(allPokemonData), { ex: 3600 });
     return allPokemonData;
   } catch (e) {
     throw new Error("Failed to fetch Pokemon data || ", { cause: e });
