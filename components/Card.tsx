@@ -69,7 +69,7 @@ const Card = ({
           alt="Pokemon Circle"
           height={200}
           width={200}
-          className="absolute z-0 group-hover:rotate-90 group-hover:scale-150 group-hover:opacity-10 transform duration-150 ease-in-out -translate-x-1/2 translate-y-1/2 opacity-6 rotate-45"
+          className="absolute z-0 group-hover:rotate-[100deg] group-hover:scale-150 group-hover:opacity-10 transform duration-150 ease-in-out -translate-x-1/2 translate-y-1/2 opacity-6 rotate-45"
         />
       </div>
     </div>
