@@ -15,6 +15,7 @@ const PokemonList = async ({ page }: { page: number }) => {
                 id: 1,
                 types: pokemon.types,
                 sprite: pokemon.image || "https://via.placeholder.com/150",
+                index: index,
               }}
             />
           );

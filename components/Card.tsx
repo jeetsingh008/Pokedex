@@ -8,6 +8,7 @@ type PokemonDetailsType = {
   types: string[];
   sprite: string;
   typeIcon?: string;
+  index: number;
 };
 
 const Card = ({
@@ -18,10 +19,12 @@ const Card = ({
     sprite:
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
     typeIcon: "Electric",
+    index: 0,
   },
 }: {
   PokemonDetails: PokemonDetailsType;
 }) => {
+  const isPriority = PokemonDetails.index < 8;
   return (
     <div
       className={`card group ${TYPE_BG_MAP[PokemonDetails.types[0].toLowerCase()]}`}
@@ -33,6 +36,7 @@ const Card = ({
         alt={PokemonDetails.name}
         width={160}
         height={160}
+        priority={isPriority}
       />
       <div className="h-full w-full group p-5 overflow-hidden relative flex flex-col justify-end">
         {/* Upper part - Sprite */}
