@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { IoSearchOutline } from "react-icons/io5";
 import Button from "./Button";
+import { IoFilterOutline } from "react-icons/io5";
+import BaseFilter from "./BaseFilter";
 
 const Header = () => {
   return (
@@ -27,6 +29,17 @@ const Header = () => {
         <div className="absolute top-1/2 -translate-y-1/2 right-2">
           <Button text="Search" variant="Secondary" />
         </div>
+      </div>
+      {/* Sidebar trigger */}
+      <div className="w-full flex justify-between items-center px-2">
+         {/* Base filter */}
+         <BaseFilter />
+        <button>
+          <span>
+            {" "}
+            <IoFilterOutline />{" "}
+          </span>
+        </button>
       </div>
     </div>
   );
