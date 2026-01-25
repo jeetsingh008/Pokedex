@@ -62,9 +62,9 @@ const BaseFilter = () => {
       {/* Trigger Button */}
       <div
         onClick={() => setIsOpen((open) => !open)}
-        className={`flex cursor-pointer transition-all ease-in-out items-center justify-between border-2 py-2 px-4 rounded-lg font-semibold ${
+        className={`flex hover:border-dark-gray/40 cursor-pointer transition-all ease-in-out items-center justify-between border-2 py-2 px-4 rounded-lg font-semibold ${
           isOpen
-            ? "border-dark-blue ring-1 ring-dark-blue"
+            ? "border-dark-gray/40"
             : "border-dark-gray/16"
         }`}
       >

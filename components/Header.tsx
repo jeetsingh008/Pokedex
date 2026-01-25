@@ -32,13 +32,12 @@ const Header = () => {
       </div>
       {/* Sidebar trigger */}
       <div className="w-full flex justify-between items-center px-2">
-         {/* Base filter */}
-         <BaseFilter />
-        <button>
-          <span>
-            {" "}
-            <IoFilterOutline />{" "}
-          </span>
+        {/* Base filter */}
+        <BaseFilter />
+        {/* Main Filter Trigger */}
+        <button className="border-2 border-dark-gray/16 flex items-center gap-2 py-2 px-4 hover:border-dark-gray/40 transition-colors ease-in-out rounded-full">
+          {" "}
+          <IoFilterOutline /> <span className="">Filter</span>
         </button>
       </div>
     </div>
