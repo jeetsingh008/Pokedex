@@ -1,3 +1,4 @@
+import FilterSidebar from "@/components/FilterSidebar";
 import Header from "@/components/Header";
 import PaginationControls from "@/components/PaginationControls";
 import PokemonList from "@/components/PokemonList";
@@ -20,14 +21,14 @@ export default async function Home({
   console.log(currentPage);
 
   return (
-    <div className="container mx-auto px-4 py-10 min-h-screen w-full space-y-10">
+    <div className="container relative mx-auto px-4 py-10 min-h-screen w-full space-y-10">
       <Header />
       <main className="py-20">
         <Suspense fallback={<Skeletons />}>
           <PokemonList page={currentPage} />
         </Suspense>
-
-        <PaginationControls currentPage={currentPage} />
+        <PaginationControls currentPage={currentPage} />  
+        <FilterSidebar />
       </main>
     </div>
   );

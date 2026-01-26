@@ -5,7 +5,7 @@
   --text-heading-l: clamp(32px, 5vw, 48px);
   --text-heading-m: clamp(24px, 1.5rem + 1vw, 28px);
   --text-heading-s: clamp(16px, 1rem + 0.5vw, 18px);
-  --text-body-1: clamp(16px, 1rem + 0.25vw, 20px);
+  --text-body-1: clamp(20px, 1.18rem + 0.28vw, 23px);
   --text-body-2: clamp(14px, 0.875rem + 0.15vw, 16px);
   --text-subtext-1: clamp(14px, 0.875rem + 0.1vw, 16px);
   --text-subtext-2: clamp(12px, 0.75rem + 0.1vw, 14px);
