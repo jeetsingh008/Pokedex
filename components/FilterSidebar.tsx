@@ -29,7 +29,7 @@ const FilterSidebar = () => {
                     type="checkbox"
                     name={type}
                     value={type}
-                    className="size-4"
+                    className="size-4 appearance-none border border-dark-gray checked:bg-dark-blue checked:border-0"
                     aria-label={type}
                   />
                   <span>{type}</span>
@@ -46,7 +46,7 @@ const FilterSidebar = () => {
                       type="checkbox"
                       name={type}
                       value={type}
-                      className="size-4"
+                      className="size-4 appearance-none border border-dark-gray checked:bg-dark-blue checked:border-0"
                       aria-label={type}
                     />
                     <span>{type}</span>
