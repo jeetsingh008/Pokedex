@@ -5,7 +5,7 @@
   --text-heading-l: clamp(32px, 5vw, 48px);
   --text-heading-m: clamp(24px, 1.5rem + 1vw, 28px);
   --text-heading-s: clamp(16px, 1rem + 0.5vw, 18px);
-  --text-body-1: clamp(16px, 1rem + 0.25vw, 20px);
+  --text-body-1: clamp(18px, 1.16rem + 0.26vw, 21px);
   --text-body-2: clamp(14px, 0.875rem + 0.15vw, 16px);
   --text-subtext-1: clamp(14px, 0.875rem + 0.1vw, 16px);
   --text-subtext-2: clamp(12px, 0.75rem + 0.1vw, 14px);
@@ -29,7 +29,7 @@
   --color-fire: #ff6464;
   --color-bug: #c9ff84;
   --color-water: #9ff3ff;
-  --color-flying: #AFDBF5;
+  --color-flying: #afdbf5;
   --color-poison: #d89cfd;
   --color-normal: #cbcbcb;
   --color-rock: #cfc06f;
@@ -49,7 +49,7 @@
   --color-bg-fire: #eb6c6c;
   --color-bg-bug: #91ac22;
   --color-bg-water: #009acb;
-  --color-bg-flying: #6CB4EE;
+  --color-bg-flying: #6cb4ee;
   --color-bg-poison: #7e00cb;
   --color-bg-normal: #b6b6b6;
   --color-bg-rock: #857d57;
@@ -134,5 +134,14 @@
   }
   .btn-outline {
     @apply bg-transparent border border-dark-blue px-6 py-1 rounded-md text-dark-blue font-medium shadow-card hover:bg-dark-blue/10;
+  }
+
+  .filter-sidebar {
+    @apply fixed z-50 right-0 top-0 h-screen w-56 sm:w-64 lg:w-72 shadow-card bg-white py-5;
+  }
+
+  .custom-checkbox {
+    @apply size-4 appearance-none border border-dark-gray checked:bg-dark-blue checked:border-0
+size-4 appearance-none border border-dark-gray checked:bg-dark-blue checked:border-0;
   }
 }

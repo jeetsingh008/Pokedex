@@ -63,9 +63,7 @@ const BaseFilter = () => {
       <div
         onClick={() => setIsOpen((open) => !open)}
         className={`flex hover:border-dark-gray/40 cursor-pointer transition-all ease-in-out items-center justify-between border-2 py-2 px-4 rounded-lg font-semibold ${
-          isOpen
-            ? "border-dark-gray/40"
-            : "border-dark-gray/16"
+          isOpen ? "border-dark-gray/40" : "border-dark-gray/16"
         }`}
       >
         <span className="text-subtext-1">{selectedItem}</span>
