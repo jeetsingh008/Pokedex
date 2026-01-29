@@ -5,6 +5,13 @@ interface PokemonBrief {
   url: string;
 }
 
+export interface CleanPokemon {
+  id: number;
+  name: string;
+  types: string[];
+  image: string;
+}
+
 export const getNameAndUrl = async (page: number = 1, limit: number = 20) => {
   const offset = (page - 1) * limit;
   try {
@@ -26,7 +33,7 @@ export const getPokemonData = async (page: number = 1, limit: number = 20) => {
   const CACHE_KEY = `pokemon:page:${page}:limit:${limit}`;
 
   try {
-    const cachedData = await redis.get(CACHE_KEY);
+    const cachedData = await redis.get<CleanPokemon[]>(CACHE_KEY);
 
     if (cachedData) {
       console.log("CACHE HIT: Fetching data from redis...");
