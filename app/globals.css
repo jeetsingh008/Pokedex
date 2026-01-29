@@ -137,7 +137,7 @@
   }
 
   .filter-sidebar {
-    @apply fixed z-50 right-0 top-0 h-screen w-56 sm:w-64 lg:w-72 shadow-card bg-white py-5;
+    @apply fixed z-50 right-0 top-0 h-screen w-64 sm:w-72 lg:w-80 shadow-card bg-white py-5;
   }
 
   .custom-checkbox {
