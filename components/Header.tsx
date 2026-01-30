@@ -11,7 +11,7 @@ const Header = () => {
   const searchQuery = usePokedexStore((state) => state.searchQuery);
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value);
-    console.log(searchQuery);
+    // console.log(searchQuery);
   };
   return (
     <div className="w-full space-y-8">
