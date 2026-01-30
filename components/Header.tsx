@@ -1,10 +1,18 @@
+"use client";
 import Image from "next/image";
 import { IoSearchOutline } from "react-icons/io5";
 import Button from "./Button";
 import { IoFilterOutline } from "react-icons/io5";
 import BaseFilter from "./BaseFilter";
+import { usePokedexStore } from "@/store/usePokedexStore";
 
 const Header = () => {
+  const setSearchQuery = usePokedexStore((state) => state.setSearchQuery);
+  const searchQuery = usePokedexStore((state) => state.searchQuery);
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(event.target.value);
+    console.log(searchQuery);
+  };
   return (
     <div className="w-full space-y-8">
       <div className="w-56">
@@ -23,6 +31,8 @@ const Header = () => {
         <IoSearchOutline className="absolute h-5 w-5 top-1/2 left-3 -translate-y-1/2 text-dark-blue" />
         <input
           type="text"
+          value={searchQuery}
+          onChange={handleChange}
           className="search-input"
           placeholder="Pokemon name, number or type"
         />
