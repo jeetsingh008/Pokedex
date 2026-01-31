@@ -1,10 +1,17 @@
 import { create } from "zustand";
 
+interface PokemonIndex {
+  name: string;
+  id: number;
+}
+
 interface PokedexState {
   searchQuery: string;
   selectedTypes: string[];
   activeHeight: string;
   activeWeight: string;
+  masterList: PokemonIndex[];
+  setMasterList: (list: PokemonIndex[]) => void;
 
   setSearchQuery: (query: string) => void;
   toggleType: (type: string) => void;
@@ -18,7 +25,9 @@ export const usePokedexStore = create<PokedexState>((set) => ({
   selectedTypes: [],
   activeHeight: "",
   activeWeight: "",
+  masterList: [],
 
+  setMasterList: (list) => set({ masterList: list }),
   setSearchQuery: (query) => set({ searchQuery: query }),
 
   toggleType: (type) =>
