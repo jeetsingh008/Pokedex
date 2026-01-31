@@ -16,6 +16,35 @@ export interface CleanPokemon {
   image: string;
 }
 
+export const getSearchIndex = async () => {
+  const CACHE_KEY = "pokemon:search-index";
+
+  try {
+    const cachedData = await redis.get(CACHE_KEY);
+    if (cachedData) return cachedData;
+
+    const response = await fetch(`${BASE_URL}/pokemon?limit=1025`);
+    if (!response.ok) throw new Error("API Fetch failed");
+
+    const data = await response.json();
+
+    const index = data.results.map((p: any) => {
+      const id = parseInt(p.url.split("/").filter(Boolean).pop()!);
+
+      return {
+        name: p.name,
+        id: id,
+      };
+    });
+
+    await redis.set(CACHE_KEY, index, { ex: 604800 }); // 7 days cache
+    return index;
+  } catch (error) {
+    console.error("Search Index Error:", error);
+    throw new Error("Failed to fetch search index", { cause: error });
+  }
+};
+
 export const getNameAndUrl = async (page: number = 1, limit: number = 20) => {
   const offset = (page - 1) * limit;
   try {
