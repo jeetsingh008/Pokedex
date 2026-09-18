@@ -1,4 +1,4 @@
-import FilterSidebar from "@/components/FilterSidebar";
+// import FilterSidebar from "@/components/FilterSidebar";
 import Header from "@/components/Header";
 import PaginationControls from "@/components/PaginationControls";
 import PokemonList from "@/components/PokemonList";
@@ -28,7 +28,7 @@ export default async function Home({
           <PokemonList page={currentPage} />
         </Suspense>
         <PaginationControls currentPage={currentPage} />  
-        <FilterSidebar />
+        {/* <FilterSidebar /> */}
       </main>
     </div>
   );

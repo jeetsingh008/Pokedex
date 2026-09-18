@@ -1,6 +1,6 @@
 import { redis } from "@/lib/redis";
 
-const BASE_URL = process.env.BASE_URL;
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
 
@@ -21,6 +21,8 @@ export const getSearchIndex = async () => {
 
   try {
     const cachedData = await redis.get(CACHE_KEY);
+    console.log(cachedData);
+    
     if (cachedData) return cachedData;
 
     const response = await fetch(`${BASE_URL}/pokemon?limit=1025`);
